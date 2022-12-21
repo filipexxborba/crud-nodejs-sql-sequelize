@@ -15,6 +15,7 @@ const User = database.define("user", {
    email: {
       allowNull: false,
       type: DataTypes.STRING,
+      unique: true,
       validate: { isEmail: true },
    },
    password: {
@@ -23,6 +24,7 @@ const User = database.define("user", {
    },
    isActive: {
       type: DataTypes.BOOLEAN,
+      defaultValue: true,
    },
 });
 
