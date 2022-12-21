@@ -5,11 +5,13 @@ import { sequelize } from "./database";
 
 // Routes
 import UsersRoute from "./routes/Users";
+import NewsRoute from "./routes/News";
 
 const App: Application = express();
 
 App.use(express.json());
 App.use("/api/users", UsersRoute);
+App.use("/api/news", NewsRoute);
 
 // Server start
 App.listen(process.env.PORT || 3000, () => {

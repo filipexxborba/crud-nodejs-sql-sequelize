@@ -1,5 +1,6 @@
 import { DataTypes } from "sequelize";
 import { sequelize as database } from "../database";
+import User from "./User";
 
 const News = database.define("news", {
    id: {
@@ -19,6 +20,10 @@ const News = database.define("news", {
       type: DataTypes.STRING,
       allowNull: false,
    },
+});
+
+News.belongsTo(User, {
+   constraints: true,
 });
 
 export default News;

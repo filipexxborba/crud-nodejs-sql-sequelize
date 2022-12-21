@@ -3,6 +3,7 @@ import User from "../models/User";
 
 const router = express.Router();
 
+// Get all users route
 router.get("/", async (req: Request, res: Response) => {
    try {
       const users = await User.findAll();
@@ -13,6 +14,7 @@ router.get("/", async (req: Request, res: Response) => {
    }
 });
 
+// Get User by ID route
 router.get("/:id", async (req: Request, res: Response) => {
    try {
       const user = await User.findByPk(req.params.id);
@@ -22,6 +24,7 @@ router.get("/:id", async (req: Request, res: Response) => {
    }
 });
 
+// Create a new User route
 router.post("/", async (req: Request, res: Response) => {
    const { firstName, lastName, email, password } = req.body;
    console.log(firstName, lastName, email, password);
@@ -40,6 +43,7 @@ router.post("/", async (req: Request, res: Response) => {
    }
 });
 
+// Edit one User with ID
 router.put("/:id", async (req: Request, res: Response) => {
    const { firstName, lastName, email, password, isActive } = req.body;
    try {
@@ -61,10 +65,11 @@ router.put("/:id", async (req: Request, res: Response) => {
    }
 });
 
+// Delete a User with ID route
 router.delete("/:id", async (req: Request, res: Response) => {
    try {
       User.destroy({ where: { id: req.params.id } });
-      res.status(200).send({
+      res.status(203).send({
          message: `User with ID: ${req.params.id} is deleted succesfully!`,
       });
    } catch (error: any) {
