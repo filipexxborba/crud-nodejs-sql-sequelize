@@ -5,7 +5,7 @@ export const News = database.define("News", {
    id: {
       primaryKey: true,
       autoIncrement: true,
-      type: "INTEGER",
+      type: DataTypes.INTEGER,
    },
    slug: {
       type: DataTypes.STRING,
