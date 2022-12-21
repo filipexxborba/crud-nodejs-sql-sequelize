@@ -1,7 +1,6 @@
-import * as dotenv from "dotenv";
-
 import express, { Application } from "express";
 import { sequelize } from "./database";
+require('dotenv').config();
 
 // Routes
 import UsersRoute from "./routes/Users";
