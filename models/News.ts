@@ -1,28 +1,27 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../database";
 
-sequelize.define("User", {
+sequelize.define("News", {
    id: {
       primaryKey: true,
       autoIncrement: true,
       type: "INTEGER",
    },
-   firstName: {
+   slug: {
       type: DataTypes.STRING,
       allowNull: false,
    },
-   lastName: { type: DataTypes.STRING, allowNull: true },
-   email: {
-      allowNull: false,
+   title: {
       type: DataTypes.STRING,
-      validate: { isEmail: true },
-   },
-   password: {
       allowNull: false,
-      type: DataTypes.STRING,
-      validate: { isPassword: true },
    },
-   isActive: {
-      type: DataTypes.BOOLEAN,
+   description: {
+      type: DataTypes.STRING,
+      allowNull: false,
+   },
+   createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      validate: { isDate: true },
    },
 });
