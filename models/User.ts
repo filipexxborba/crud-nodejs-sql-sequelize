@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
 import { sequelize as database } from "../database";
 
-export const User = database.define("User", {
+const User = database.define("user", {
    id: {
       primaryKey: true,
       autoIncrement: true,
@@ -20,9 +20,10 @@ export const User = database.define("User", {
    password: {
       allowNull: false,
       type: DataTypes.STRING,
-      validate: { isPassword: true },
    },
    isActive: {
       type: DataTypes.BOOLEAN,
    },
 });
+
+export default User;

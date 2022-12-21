@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
 import { sequelize as database } from "../database";
 
-export const News = database.define("News", {
+const News = database.define("news", {
    id: {
       primaryKey: true,
       autoIncrement: true,
@@ -19,9 +19,6 @@ export const News = database.define("News", {
       type: DataTypes.STRING,
       allowNull: false,
    },
-   createdAt: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      validate: { isDate: true },
-   },
 });
+
+export default News;
