@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
-import { sequelize } from "../database";
+import { sequelize as database } from "../database";
 
-sequelize.define("User", {
+export const User = database.define("User", {
    id: {
       primaryKey: true,
       autoIncrement: true,

@@ -10,7 +10,7 @@ App.listen(process.env.PORT || 3000, () => {
    console.log(`Server launched! 🚀`);
    console.log(`Listening on PORT: ${process.env.PORT || 3000}`);
 
-   //    Connection to database
+   // Connection to database
    sequelize
       .authenticate()
       .then(() => {
