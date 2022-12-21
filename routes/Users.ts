@@ -1,7 +1,5 @@
 import express, { Request, Response } from "express";
 import User from "../models/User";
-import { UserAttributes, UserCreationAttributes } from "../@types/User";
-import { Model } from "sequelize";
 
 const router = express.Router();
 
