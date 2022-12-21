@@ -1,3 +1,5 @@
+import { Optional } from "sequelize";
+
 export type UserAttributes = {
    id?: number;
    firstName: string;
@@ -6,3 +8,5 @@ export type UserAttributes = {
    password: string;
    isActive: boolean;
 };
+
+export type UserCreationAttributes = Optional<UserAttributes, "id">;
